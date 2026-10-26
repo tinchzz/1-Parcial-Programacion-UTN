@@ -28,7 +28,7 @@ def validacion_Primer_Nota():
     validez = False
 
     while validez == False:
-        nota_Alumno = int(input("Nota primer parcial:"))
+        nota_Alumno = int(input("Nota primer parcial: "))
         if 0 <= nota_Alumno <= 10:
             validez = True
         else:
@@ -42,7 +42,7 @@ def validacion_Segunda_Nota():
     validez = False
 
     while validez == False:
-        nota_Alumno = int(input("Nota segunda parcial:"))
+        nota_Alumno = int(input("Nota segunda parcial: "))
         if 0 <= nota_Alumno <= 10:
             validez = True
         else:

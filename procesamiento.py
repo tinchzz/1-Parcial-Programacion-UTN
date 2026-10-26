@@ -21,8 +21,9 @@ def cargar_Alumnos():
 
     return nombre_Alumnos, notas_Parcial1, notas_Parcial2, promedio_Alumnos
 
-def mostrar_Alumnos(nombres, notas1, notas2, promedios):
-    pass
+def mostrar_Alumnos(nombres):
+    for i in range(len(nombres)):
+        print(f"ID: {i} - Nombre: {nombres[i]}")
 
 
 def mostrar_Estadisticas(nombres, promedios):
