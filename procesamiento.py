@@ -22,6 +22,7 @@ def cargar_alumnos():
     return nombre_alumnos, notas_parcial1, notas_parcial2, promedio_alumnos
 
 def mostrar_alumnos(nombres):
+    print("====== ALUMNOS DISPONIBLES ======")
     for i in range(len(nombres)):
         print(f"ID: {i} - Nombre: {nombres[i]}")
 
@@ -48,24 +49,29 @@ def mostrar_estadisticas(nombres, promedios):
 
     promedio_general = promedio_general / len(promedios)
 
+    print("====== PROMEDIOS GENERALES, MEJOR Y PEOR ======")
     print(f"Promedio General: {promedio_general}")
     print(f"Mejor Promedio: {nombre_mejor_promedio} con {mejor_promedio}")
     print(f"Peor Promedio: {nombre_peor_promedio} con {peor_promedio}")
 
 
-def ver_ranking(nombres,promedios):
-    for i in range(len(promedios)-1):
-        for j in range(len(promedios)-1-i): 
-            if promedios[j] < promedios[j+1]:
-                aux = promedios[j+1]
-                promedios[j+1] = promedios[j]
-                promedios[j] = aux
-                aux_nombre = nombres[j+1]
-                nombres[j+1] = nombres[j]
-                nombres[j] = aux_nombre
-
-    for i in range(len(nombres)):
-        print(f"{i + 1}. {nombres[i]} - Promedio: {promedios[i]}")
+def ver_ranking(nombres, promedios):
+    nombres_ranking = nombres.copy()
+    promedios_ranking = promedios.copy()
+    for i in range(len(promedios_ranking) - 1):
+        for j in range(len(promedios_ranking) - 1 - i): 
+            if promedios_ranking[j] < promedios_ranking[j+1]:
+                aux = promedios_ranking[j + 1]
+                promedios_ranking[j + 1] = promedios_ranking[j]
+                promedios_ranking[j] = aux
+                aux_nombre = nombres_ranking[j+1]
+                nombres_ranking[j + 1] = nombres_ranking[j]
+                nombres_ranking[j] = aux_nombre
+                
+    print("====== RANKING MAYOR A MENOR ======")
+    for i in range(len(nombres_ranking)):
+        
+        print(f"{i + 1}. {nombres_ranking[i]} - Promedio: {promedios_ranking[i]}")
 
 
 def buscar_alumno(nombres, notas1, notas2, promedios):
