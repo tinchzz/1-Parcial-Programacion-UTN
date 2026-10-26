@@ -53,8 +53,19 @@ def mostrar_estadisticas(nombres, promedios):
     print(f"Peor Promedio: {nombre_peor_promedio} con {peor_promedio}")
 
 
-def ver_ranking():
-    pass
+def ver_ranking(nombres,promedios):
+    for i in range(len(promedios)-1):
+        for j in range(len(promedios)-1-i): 
+            if promedios[j] < promedios[j+1]:
+                aux = promedios[j+1]
+                promedios[j+1] = promedios[j]
+                promedios[j] = aux
+                aux_nombre = nombres[j+1]
+                nombres[j+1] = nombres[j]
+                nombres[j] = aux_nombre
+
+    for i in range(len(nombres)):
+        print(f"{i + 1}. {nombres[i]} - Promedio: {promedios[i]}")
 
 
 def buscar_alumno(nombres, notas1, notas2, promedios):
