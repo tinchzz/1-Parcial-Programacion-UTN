@@ -1,4 +1,4 @@
-from procesamiento import cargar_Alumnos, mostrar_Alumnos
+from procesamiento import cargar_alumnos, mostrar_alumnos
 
 salir = True
 
@@ -16,9 +16,9 @@ while salir == True:
 
     match(opcion):
         case 1:
-            nombres, notas1, notas2, promedios = cargar_Alumnos()
+            nombres, notas1, notas2, promedios = cargar_alumnos()
         case 2:
-            mostrar_Alumnos(nombres)
+            mostrar_alumnos(nombres)
         case 3:
             pass
         case 4:
