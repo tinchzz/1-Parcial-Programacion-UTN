@@ -27,13 +27,30 @@ def mostrar_alumnos(nombres):
 
 
 def mostrar_estadisticas(nombres, promedios):
+    promedio_general = 0
+    mejor_promedio = 0
+    nombre_mejor_promedio = ""
+    peor_promedio = 10
+    nombre_peor_promedio = ""
+
     for i in range(len(promedios)):
         promedio_general += promedios[i] 
+
+        
+        if mejor_promedio < promedios[i]:
+            mejor_promedio = promedios[i]
+            nombre_mejor_promedio = nombres[i]
+
+        
+        if peor_promedio > promedios[i]:
+            peor_promedio = promedios[i]
+            nombre_peor_promedio = nombres[i]
+
     promedio_general = promedio_general / len(promedios)
 
-
-    return promedio_general
-
+    print(f"Promedio General: {promedio_general}")
+    print(f"Mejor Promedio: {nombre_mejor_promedio} con {mejor_promedio}")
+    print(f"Peor Promedio: {nombre_peor_promedio} con {peor_promedio}")
 
 
 def ver_ranking():

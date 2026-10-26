@@ -1,4 +1,4 @@
-from procesamiento import cargar_alumnos, mostrar_alumnos
+from procesamiento import cargar_alumnos, mostrar_alumnos, mostrar_estadisticas
 
 salir = True
 
@@ -20,7 +20,7 @@ while salir == True:
         case 2:
             mostrar_alumnos(nombres)
         case 3:
-            pass
+            mostrar_estadisticas(nombres, promedios)
         case 4:
             pass
         case 5:
