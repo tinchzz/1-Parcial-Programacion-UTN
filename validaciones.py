@@ -24,25 +24,15 @@ def alumno_valido():
 
 
 
-def validacion_primer_nota():
+def validacion_nota(nota):
     validez = False
+    cual_nota = nota
 
     while not validez:
-        nota_alumno = int(input("Nota primer parcial: "))
-        if 0 <= nota_alumno <= 10:
-            validez = True
+        if cual_nota == "primera":
+            nota_alumno = int(input("Nota primer parcial: "))
         else:
-            validez = False
-            
-    
-    return nota_alumno
-
-
-def validacion_segunda_nota():
-    validez = False
-
-    while not validez:
-        nota_alumno = int(input("Nota segunda parcial: "))
+            nota_alumno = int(input("Nota segundo parcial: "))
         if 0 <= nota_alumno <= 10:
             validez = True
         else:
@@ -53,4 +43,10 @@ def validacion_segunda_nota():
 
 
 
+def hay_alumnos(nombres):
+    if len(nombres) == 0:
+        print("No hay alumnos cargados. Cargar alumnos primero.")
+        return False
+    else:
+        return True
 

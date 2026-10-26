@@ -1,6 +1,8 @@
-from procesamiento import cargar_alumnos, mostrar_alumnos, mostrar_estadisticas, ver_ranking
+from procesamiento import cargar_alumnos, mostrar_alumnos, mostrar_estadisticas, ver_ranking, buscar_alumno, juegos_nombre
 
 salir = True
+
+nombres, notas1, notas2, promedios = [], [], [], []
 
 while salir == True:
     opcion = int(input("===== NOTAFÁCIL ===== \n" 
@@ -13,7 +15,6 @@ while salir == True:
     "0. Salir: "))
 
 
-
     match(opcion):
         case 1:
             nombres, notas1, notas2, promedios = cargar_alumnos()
@@ -24,9 +25,9 @@ while salir == True:
         case 4:
             ver_ranking(nombres,promedios)
         case 5:
-            pass
+            buscar_alumno(nombres, notas1, notas2, promedios)
         case 6:
-            pass
+            juegos_nombre(nombres)
         case 0:
             salir = False
         case _:
